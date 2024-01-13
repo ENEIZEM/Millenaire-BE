@@ -1,7 +1,0 @@
-{
-    "better-foliage": {
-        "leaves": [
-            {"texture": "terrain-atlas/.png"}
-        ]
-    }
-}
