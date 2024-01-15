@@ -1,0 +1,84 @@
+{
+    "global": {
+        "info": {
+            "name": "Millenaire BE",
+            "author": "Maksim Pomazuev",
+            "version": "1.0.0",
+            "description": "Millenaire BE is a mod port for Minecraft BE. His goal is to fill the \"void\" of the world by adding settlements with a new type of NPC. The mod includes the generation of \"independent\" settlements, as well as the creation of their own, which will develop and trade with the player and give him quests, such as Creation Quests to explore the world",
+            "clientside": false
+        },
+        "api": "CoreEngine"
+    },
+    "make": {
+        "debugAbi": "armeabi-v7a",
+        "abis": [
+            "armeabi-v7a",
+            "x86"
+        ],
+        "linkNative": [
+            "minecraftpe",
+            "innercore",
+            "nativejs"
+        ],
+        "excludeFromRelease": [],
+        "pushTo": "storage/emulated/0/games/horizon/packs/Inner_Core/innercore/mods/Millenaire-BE",
+        "ndkPath": null
+    },
+    "resources": [
+        {
+            "path": "src/assets",
+            "type": "resource_directory"
+        },
+        {
+            "path": "src/assets/gui",
+            "type": "gui"
+        },
+        {
+            "path": "src/minecraft_packs/resource/*",
+            "type": "minecraft_resource_pack"
+        },
+        {
+            "path": "src/minecraft_packs/behavior/*",
+            "type": "minecraft_behavior_pack"
+        }
+    ],
+    "sources": [
+        {
+            "source": "src/dev",
+            "target": "main.js",
+            "type": "main",
+            "language": "typescript"
+        },
+        {
+            "source": "src/launcher.js",
+            "type": "launcher",
+            "language": "javascript"
+        },
+        {
+            "source": "src/libraries/*",
+            "type": "library",
+            "language": "javascript"
+        },
+        {
+            "source": "src/preloader/*",
+            "type": "preloader",
+            "language": "javascript"
+        }
+    ],
+    "compile": [
+        {
+            "source": "src/native/*",
+            "type": "native"
+        },
+        {
+            "source": "src/java/*",
+            "type": "java"
+        }
+    ],
+    "additional": [
+        {
+            "source": "src/assets/root/*",
+            "targetDir": "."
+        }
+    ]
+}
