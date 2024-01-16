@@ -1,0 +1,2 @@
+"Militaire Village"
+"военное поселение"
