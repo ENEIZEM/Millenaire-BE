@@ -37,5 +37,9 @@ const BYZANTINES = "byzantines";
 const INUITS = "inuits";
 const SELJUK = "seljuk";
 
-let millenaire
+let Millenaire: {
+    createCulture: any,
+    createVillage: any,
+    createBuilding: any,
+};
 
