@@ -5,5 +5,5 @@
 	<classpathentry kind="lib" path="toolchain/classpath/horizon.jar"/>
 	<classpathentry kind="lib" path="toolchain/classpath/innercore.jar"/>
 	<classpathentry kind="output" path="toolchain/build/java"/>
-	<classpathentry kind="src" path="src/java/millenaire/src"/>
+	<classpathentry kind="src" path="src/java/millenaire"/>
 </classpath>

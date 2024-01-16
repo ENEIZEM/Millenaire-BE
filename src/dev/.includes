@@ -4,3 +4,6 @@
 # nocheck
 
 header/header.ts
+building/building.ts
+villages/villages.ts
+culture/culture.ts

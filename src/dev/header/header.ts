@@ -42,4 +42,3 @@ let Millenaire: {
     createVillage: any,
     createBuilding: any,
 };
-
