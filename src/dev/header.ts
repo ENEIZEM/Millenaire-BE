@@ -41,4 +41,9 @@ let Millenaire: {
     createCulture: any,
     createVillage: any,
     createBuilding: any,
+    /*norman: {
+        villagers: any,
+        bulding: any,
+        village: any,
+    }*/
 };

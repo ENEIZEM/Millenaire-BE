@@ -1,4 +1,4 @@
-Millenaire.createCulture = function(object: {
+/*Millenaire.createCulture = function(object: {
   name: any,
   typesOfVillages: {
     name: any,
@@ -11,4 +11,4 @@ Millenaire.createCulture = function(object: {
   
 }) {
   // body...
-};
+};*/
