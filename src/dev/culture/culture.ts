@@ -1,7 +1,4 @@
 const Millenaire: {
-  //createCulture?: any,
-  //createVillage?: any,
-  //createBuilding?: any,
   cultures?: {
     [key in cultureIds]: culture
   },
