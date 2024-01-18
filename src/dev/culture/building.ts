@@ -1,7 +1,7 @@
 type normanBuildingId = "";
 type building = {
   cultureId: string,
-  villageId: string[],
+  villagesId: string[],
   buildingId: string,
   villagersId: string[],
   name: any,

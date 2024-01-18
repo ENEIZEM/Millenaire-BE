@@ -22,17 +22,17 @@ type culture = {
   name: any,
   villagesId: {
     villagesId: string,
-    buildingIds: string[],
-    villagersIds: string[],
+    buildingId: string[],
+    villagersId: string[],
   }[],
   buildingId: {
-    villagesIds: string[],
+    villagesId: string[],
     buildingId: string,
-    villagersIds: string[],
+    villagersId: string[],
   }[],
   villagersId: {
-    villagesIds: string[],
-    buildingIds: string[],
+    villagesId: string[],
+    buildingId: string[],
     villagersId: string,
   }[],
 };
