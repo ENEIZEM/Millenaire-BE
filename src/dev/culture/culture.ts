@@ -9,7 +9,7 @@ const Millenaire: {
       buldings: {
           [key in normanBuildingId]: building
       },
-      villagers:  {
+      villagers: {
           [key in normanVillagersId]: villagers
       },
   },
