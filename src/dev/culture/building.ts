@@ -23,10 +23,3 @@
     }
   };*/
  
-  //Millenaire.NormanBulding["Guild House"] = {
-
-  //}
-
-Millenaire.norman: {
-  
-}

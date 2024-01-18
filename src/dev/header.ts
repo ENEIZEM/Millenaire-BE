@@ -29,21 +29,3 @@ const RELETATION: {
     RELATION_EXCELLENT: 90,
     RELATION_MAX: 100,
 };
-const NORMAN = "norman";
-const INDIAN = "indian";
-const MAYAN = "mayan";
-const JAPANESE = "japanese";
-const BYZANTINES = "byzantines";
-const INUITS = "inuits";
-const SELJUK = "seljuk";
-
-let Millenaire: {
-    createCulture: any,
-    createVillage: any,
-    createBuilding: any,
-    /*norman: {
-        villagers: any,
-        bulding: any,
-        village: any,
-    }*/
-};

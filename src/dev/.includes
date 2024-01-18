@@ -4,6 +4,7 @@
 # nocheck
 
 header.ts
-culture/norman/norman.ts
-culture/norman/building/building.ts
-culture/norman/villages/villages.ts
+culture/culture.ts
+culture/villages.ts
+culture/building.ts
+culture/villagers.ts
