@@ -2,27 +2,27 @@ const Millenaire: {
   //createCulture?: any,
   //createVillage?: any,
   //createBuilding?: any,
-  cultures?: {[key in cultureId]: culture},
+  cultures?: {
+    [key in cultureIds]: culture
+  },
   norman?: {
       villages: {
           [key in normanVillagesId]: villages
-      };
+      },
       buldings: {
-          [key in normanBuldingId]: bulding
-      };
+          [key in normanBuildingId]: building
+      },
       villagers:  {
           [key in normanVillagersId]: villagers
-      };
-  }
+      },
+  },
 } = {};
 
-type cultureId = "norman" | "indian" | "mayan" | "japanese" | "byzantines" | "inuits" | "seljuk";
-type normanVillagesId = "";
-type normanBuldingId = "";
-type normanVillagersId = "";
+type cultureIds = "norman" | "indian" | "mayan" | "japanese" | "byzantines" | "inuits" | "seljuk";
 
 type culture = {
-  name: string,
+  cultureId: string,
+  name: any,
   villagesId: {
     villagesId: string,
     buildingIds: string[],
@@ -39,6 +39,3 @@ type culture = {
     villagersId: string,
   }[],
 };
-type villages = {};
-type bulding = {};
-type villagers = {};

@@ -1,0 +1,2 @@
+type normanVillagersId = "";
+type villagers = {};

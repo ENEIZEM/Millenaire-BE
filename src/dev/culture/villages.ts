@@ -1,0 +1,2 @@
+type normanVillagesId = "сontrolled_settlement" | "controlled_settlement_with_custom_buildings" | "controlled_settlement_with_defensive_walls" | "notre_dame" | "church_settlement" | "abbey_village" | "agricultural_settlement" | "agricultural_village" | "artisan_settlement" | "artisan_village" | "big_city" | "autonomous_city" | "military_settlement";
+type villages = {};
