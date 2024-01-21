@@ -6,5 +6,11 @@
 header.ts
 culture/culture.ts
 culture/villages.ts
-culture/building.ts
+culture/buildings.ts
 culture/villagers.ts
+culture/quests.ts
+culture/norman/norman.ts
+culture/norman/villages/villages.ts
+culture/norman/buildings/buildings.ts
+culture/norman/villagers/villagers.ts
+culture/norman/quests/quests.ts

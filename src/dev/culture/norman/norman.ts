@@ -1,14 +1,19 @@
-/*Millenaire.createCulture = function(object: {
-  name: any,
-  typesOfVillages: {
-    name: any,
-    radius: number,
-    initialNumberOfVillagers: number,
-    MaximumNumberOfVillagers: number,
-    InitialNumberOfBuildings: number,
-    TotalNumberOfBuildings: number,
+/*Millenaire.cultures.norman = {
+  cultureId: "norman",
+  name: Translation.translate("norman"),
+  villagesId: {
+    villagesId: string,
+    buildingId: string[],
+    villagersId: string[],
   }[],
-  
-}) {
-  // body...
+  buildingId: {
+    villagesId: string[],
+    buildingId: string,
+    villagersId: string[],
+  }[],
+  villagersId: {
+    villagesId: string[],
+    buildingId: string[],
+    villagersId: string,
+  }[],
 };*/
