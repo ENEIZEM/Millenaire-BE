@@ -10,7 +10,10 @@ type building = {
   length: number,
   width: number,
   iconPath: string,
-  parentBuilding: [/*Building id*/ string, /*Building level*/ number],
+  parentBuilding: [
+    /*Building id*/ string,
+    /*Building level*/ number,
+    ],
   //Building parameters when generating it
   initial: {
     level: number,
