@@ -33,4 +33,3 @@ type building = {
     /*coordinates of the doors*/ [number, number, number][],
   ][]
 };
-//abc
