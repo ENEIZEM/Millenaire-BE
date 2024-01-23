@@ -1,4 +1,4 @@
-Millenaire.cultures.norman = {
+/*Millenaire.cultures.norman = {
   cultureId: "norman",
   name: Translation.translate("norman"),
   iconPath: "",
@@ -19,4 +19,4 @@ Millenaire.cultures.norman = {
     buildingId: string[],
     villagersId: string,
   }[],
-};
+};*/
