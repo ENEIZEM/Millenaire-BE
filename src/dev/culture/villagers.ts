@@ -1,2 +1,1 @@
-type normanVillagersId = "";
 type villagers = {};

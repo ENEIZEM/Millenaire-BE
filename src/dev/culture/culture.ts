@@ -14,7 +14,7 @@ type culture = {
   cultureId: string,
   name: any,
   iconPath: string,
-  сultivatedСrops: string[],
+  cultivatedCrops: string[],
   banner: any,
   villagesId: {
     villagesId: string,

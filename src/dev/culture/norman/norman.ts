@@ -1,11 +1,14 @@
-/*Millenaire.cultures.norman = {
+Millenaire.cultures.norman = {
   cultureId: "norman",
   name: Translation.translate("norman"),
-  villagesId: {
-    villagesId: string,
+  iconPath: "",
+  cultivatedCrips: [""],
+  banner: "",
+  villagesId: [{
+    villagesId: ,
     buildingId: string[],
     villagersId: string[],
-  }[],
+  }],
   buildingId: {
     villagesId: string[],
     buildingId: string,
@@ -16,4 +19,4 @@
     buildingId: string[],
     villagersId: string,
   }[],
-};*/
+};
