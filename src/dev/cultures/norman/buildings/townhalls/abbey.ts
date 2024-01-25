@@ -14,15 +14,15 @@ Millenaire.norman.buildings.abbey = {
   initial: {
     level: 0,
     priority: 600,
-    buildingTrailLevel: 2,
-    pathToBuilding: "",
     doorsCoords: [[0, 0, 0]],
+    buildingTrailLevel: 1,
+    pathToBuilding: "",
   },
   upgrade: [{
     level: 1,
     priority: 580,
     doorsCoords: [[0, 0, 0]],
-    buildingTrailLevel: 3,
+    buildingTrailLevel: 2,
     pathToBuilding: "",
     subsidiaryBuilding: ["abbey_altar", 0],
   }, {
