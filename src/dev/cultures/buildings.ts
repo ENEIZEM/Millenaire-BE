@@ -1,38 +1,46 @@
 type buildings = {
   //The main parameters of the building
   cultureId: string,
-  villagesId: string[],
   buildingId: string,
-  villagersId: string[],
+  livingVillagersId?: string[],
+  workersVillagersId?: string[],
   type: string,
   name: any,
   nativeName: string,
   length: number,
   width: number,
-  iconPath: string,
-  orientation: number,
-  parentBuilding: [
-    /*Building id*/ string,
-    /*Building level*/ number,
-    ],
+  pathToIcon: string,
+  buildingOrientation: number,
+  shop?: string,
   //Building parameters when generating it
   initial: {
     level: number,
     priority: number,
-    pathLevel: number,
-    villagers: string[],
-    buildingPath: string,
     doorsCoords: [number, number, number][],
+    buildingTrailLevel?: number,
+    livingVillagesId?: string[],
+    workersVillagesId?: string[],
+    pathToBuilding: string,
+    parentBuilding?: [
+      /*this building level*/ number,
+      /*parent building id*/ string,
+      /*parent building level*/ number,
+      ],
   },
   //Building improvement parameters
-  upgrade: [
-    /*level of construction*/ number,
-    /*priority of construction*/ number,
-    /*villagers*/ string[],
-    /*level of paths*/ number,
-    /*path to the building file*/ string,
-    /*array of building ids*/ string[],
-    /*coordinates of the doors*/ [number, number, number][],
-    /*new name*/ any,
-  ][]
+  upgrade: {
+    level: number,
+    priority: number,
+    doorsCoords?: [number, number, number][],
+    buildingTrailLevel?: number,
+    villageTrailLevel?: number,
+    livingVillagersId?: string[],
+    workersVillagersId?: string[],
+    pathToBuilding: string,
+    subsidiaryBuilding?: [
+    /*subsidiary building id*/ string?,
+    /*subsidiary building level*/ number?,
+    ],
+    newName?: any,
+  }[]
 };
