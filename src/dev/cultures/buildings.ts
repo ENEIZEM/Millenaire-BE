@@ -1,4 +1,4 @@
-type building = {
+type buildings = {
   //The main parameters of the building
   cultureId: string,
   villagesId: string[],
@@ -10,6 +10,7 @@ type building = {
   length: number,
   width: number,
   iconPath: string,
+  orientation: number,
   parentBuilding: [
     /*Building id*/ string,
     /*Building level*/ number,
@@ -18,6 +19,7 @@ type building = {
   initial: {
     level: number,
     priority: number,
+    pathLevel: number,
     villagers: string[],
     buildingPath: string,
     doorsCoords: [number, number, number][],
@@ -27,9 +29,10 @@ type building = {
     /*level of construction*/ number,
     /*priority of construction*/ number,
     /*villagers*/ string[],
-    /*replacing paths*/ boolean,
+    /*level of paths*/ number,
     /*path to the building file*/ string,
     /*array of building ids*/ string[],
     /*coordinates of the doors*/ [number, number, number][],
+    /*new name*/ any,
   ][]
 };

@@ -2,7 +2,7 @@ const Millenaire: {
   cultures?: {[key in cultureId]: culture},
   norman?: {
     villages: {[key in normanVillagesId]: villages},
-    building: {[key in normanBuildingsId]: building},
+    buildings: {[key in normanBuildingsId]: buildings},
     villagers: {[key in normanVillagersId]: villagers},
     quests: {[key in normanQuestsId]: quests},
   },

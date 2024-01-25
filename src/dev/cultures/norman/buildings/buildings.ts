@@ -1,0 +1,1 @@
+type normanBuildingsId = "abbey" | "fort" | "guildhouse" | "largefort" | "mansion" | "playerfort" | "playerlargefort";
