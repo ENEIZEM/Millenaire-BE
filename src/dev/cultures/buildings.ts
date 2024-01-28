@@ -41,6 +41,11 @@ type buildings = {
     /*subsidiary building id*/ string?,
     /*subsidiary building level*/ number?,
     ],
+    parentBuilding?: [
+      /*this building level*/ number,
+      /*parent building id*/ string,
+      /*parent building level*/ number,
+    ],
     newName?: any,
   }[]
 };
