@@ -1,51 +1,51 @@
 type buildings = {
   //The main parameters of the building
-  cultureId: string,
-  buildingId: string,
-  livingVillagersId?: string[],
-  workersVillagersId?: string[],
-  type: string,
-  name: any,
-  nativeName: string,
-  length: number,
-  width: number,
-  pathToIcon: string,
-  buildingOrientation: number,
-  shop?: string,
+  readonly cultureId: string,
+  readonly buildingId: string,
+  readonly livingVillagersId?: string[],
+  readonly workersVillagersId?: string[],
+  readonly type: string,
+  readonly name: any,
+  readonly nativeName: string,
+  readonly length: number,
+  readonly width: number,
+  readonly pathToIcon: string,
+  readonly buildingOrientation: number,
+  readonly shop?: string,
   //Building parameters when generating it
-  initial: {
-    level: number,
-    priority: number,
-    doorsCoords: [number, number, number][],
-    buildingTrailLevel?: number,
-    livingVillagesId?: string[],
-    workersVillagesId?: string[],
-    pathToBuilding: string,
-    parentBuilding?: [
+  readonly initial: {
+    readonly level: number,
+    readonly priority: number,
+    readonly doorsCoords: [number, number, number][],
+    readonly buildingTrailLevel?: number,
+    readonly livingVillagesId?: string[],
+    readonly workersVillagesId?: string[],
+    readonly pathToBuilding: string,
+    readonly parentBuilding?: [
       /*this building level*/ number,
       /*parent building id*/ string,
       /*parent building level*/ number,
       ],
   },
   //Building improvement parameters
-  upgrade: {
-    level: number,
-    priority: number,
-    doorsCoords?: [number, number, number][],
-    buildingTrailLevel?: number,
-    villageTrailLevel?: number,
-    livingVillagersId?: string[],
-    workersVillagersId?: string[],
-    pathToBuilding: string,
-    subsidiaryBuilding?: [
+  readonly upgrade: {
+    readonly level: number,
+    readonly priority: number,
+    readonly doorsCoords?: [number, number, number][],
+    readonly buildingTrailLevel?: number,
+    readonly villageTrailLevel?: number,
+    readonly livingVillagersId?: string[],
+    readonly workersVillagersId?: string[],
+    readonly pathToBuilding: string,
+    readonly subsidiaryBuilding?: [
     /*subsidiary building id*/ string?,
     /*subsidiary building level*/ number?,
     ],
-    parentBuilding?: [
+    readonly parentBuilding?: [
       /*this building level*/ number,
       /*parent building id*/ string,
       /*parent building level*/ number,
     ],
-    newName?: any,
+    readonly newName?: any,
   }[]
 };

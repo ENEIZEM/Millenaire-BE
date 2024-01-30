@@ -40,6 +40,10 @@
         {
             "path": "src/minecraft_packs/behavior/*",
             "type": "minecraft_behavior_pack"
+        },
+        {
+            "path": "src/assets/lang",
+            "type": "java_edition_translate"
         }
     ],
     "sources": [
