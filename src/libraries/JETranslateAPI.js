@@ -18,7 +18,15 @@ let JETranslation = {
         };
         return pathToDir        
     },
-    translation: function(){
+    javaAndBedrockTranslation: function(key){
+      let language = {
+        
+      }
+      FileTools.isExists(path + "en_US.lang") ? FileTools.ReadKeyValueFile(path + "en_US.lang", "=")[key] : key
+        //переводы файлов формата lang и txt
+        //переводы двубуквенных файлов
+        //переводы 4-х буквенных файлов с верхним регистром
+        //переводы 4-х буквенных файлов с нижним регистром
         
     },
     translate: function(key, path = this.getPathToTranslateDir()){
