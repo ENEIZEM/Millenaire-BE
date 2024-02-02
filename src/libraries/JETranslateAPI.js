@@ -51,7 +51,7 @@ let JETranslation = {
         this.pathToTranslateDir = pathToDir
     }(),
 
-    getPathsForEachlanguage: function(){
+    getPathsForEachlanguage: function(path){
         //проверяем, являются ли файлы в дирректории файлами перевода, достаточно наличие файла en.txt/en_us.txt/en_US.txt/en.lang/en_us.lang/en_US.lang
         let pathsToFiles = FileTools.GetListOfFiles(path);
         let pathsToDirs = FileTools.GetListOfDirs(path);
@@ -59,29 +59,65 @@ let JETranslation = {
         for(let indexOfPath = 0; indexOfPath < pathsToFilesAndDirs.length - 1; indexOfPath++){
             for(let indexOfKey = 0; indexOfKey < 30; indexOfKey++){
                 let nameOfKey = Object.keys(this.language)[indexOfKey];
-                let nameOfFile = pathsToFiles[indexOfPath].getName();
-                let nameOfDir = pathsToDirs[indexOfPath].getName();
-                let arrayOfKey = [nameOfKey, nameOfKey.slice(0, 2), nameOfKey.slice(0, 3) + nameOfKey.slice(3, 5).toUpperCase()];
-                if(!!~arrayOfKey.indexOf(nameOfFile.slice(0, nameOfFile.lastIndexOf("."))) || !!~arrayOfKey.indexOf(nameOfDir)) {
-                    function setPathsForEachlanguage(arrayOfPaths){
-                        //в объект language для соответствующего языка добавляются все пары вида "ключ: перевод" из всех файлов перевода
-                        //this.language[nameOfKey].push(pathsToFiles[indexOfPath].getName())
-                        //this.language[nameOfKey].push(pathsToFiles[pathsToDirs].getName())
-                        setPathsForEachlanguage()
-                    }(this.pathsToFilesAndDirs);
-                } else if (!indexOfKey){
-                    break;
-                }
+                //let nameOfFile = pathsToFiles[indexOfPath].getName();
+                //let nameOfDir = pathsToDirs[indexOfPath].getName();
+                //let arrayOfKey = [nameOfKey, nameOfKey.slice(0, 2), nameOfKey.slice(0, 3) + nameOfKey.slice(3, 5).toUpperCase()];
+                //if(!!~arrayOfKey.indexOf(nameOfFile.slice(0, nameOfFile.lastIndexOf("."))) || !!~arrayOfKey.indexOf(nameOfDir)){
+                    function setPathsForEachlanguage(arrayOfPaths){        
+                        let arrayOfNextLevelPaths;
+                        arrayOfPaths.forEach(function(element){
+                            if (element.isFile()){
+                                Object.assign(this.language[nameOfKey], element.ReadKeyValueFile(element.getPath(), "="))
+                            } else if (element.isDirectory()){
+                                arrayOfNextLevelPaths = FileTools.GetListOfDirs(element.getPath())
+                            }
+                        });
+                        if (!arrayOfNextLevelPaths){
+                            setPathsForEachlanguage(arrayOfNextLevelPaths)
+                        }
+                    }(pathsToFilesAndDirs);
+                //} else if (!indexOfKey){
+                //    break;
+                //}
             }
         }
     }(this.pathToTranslateDir),
 
-    translate: function(key, path = this.getPathToTranslateDir()){
+    translate: function(key){
+        function getLanguageKey(languageKey){
+            return this.language[languageKey][key]
+        };
         Translation.translate(key);
-        if (!!path){
-            Translation.addTranslation(key, {
-                "en": FileTools.isExists(path + "en_US.lang") ? FileTools.ReadKeyValueFile(path + "en_US.lang", "=")[key] : key
-            })
-        }
+        Translation.addTranslation(key, {
+            "en_us": !!getLanguageKey("en_us") ? getLanguageKey("en_us") : key,
+            "bg_bg": !!getLanguageKey("bg_bg") ? getLanguageKey("bg_bg") : this["en_us"],
+            "cs_cz": ,
+            "da_dk": ,
+            "de_de": ,
+            "el_gr": ,
+            "en_gb": ,
+            "es_es": ,
+            "es_mx": ,
+            "fi_fi": ,
+            "fr_ac": ,
+            "fr_fr": ,
+            "hu_hu": ,
+            "id_id": ,
+            "it_it": ,
+            "ja_jp": ,
+            "ko_kr": ,
+            "nb_no": ,
+            "no_no": ,
+            "nl_nl": ,
+            "pl_pl": ,
+            "pt_br": ,
+            "pt_pt": ,
+            "ru_ru": ,
+            "sk_sk": ,
+            "tr_tr": ,
+            "uk_ua": ,
+            "zh_cn": ,
+            "zh_tw": ,
+        })
     }
 };
