@@ -59,26 +59,19 @@ let JETranslation = {
         for(let indexOfPath = 0; indexOfPath < pathsToFilesAndDirs.length - 1; indexOfPath++){
             for(let indexOfKey = 0; indexOfKey < 30; indexOfKey++){
                 let nameOfKey = Object.keys(this.language)[indexOfKey];
-                //let nameOfFile = pathsToFiles[indexOfPath].getName();
-                //let nameOfDir = pathsToDirs[indexOfPath].getName();
-                //let arrayOfKey = [nameOfKey, nameOfKey.slice(0, 2), nameOfKey.slice(0, 3) + nameOfKey.slice(3, 5).toUpperCase()];
-                //if(!!~arrayOfKey.indexOf(nameOfFile.slice(0, nameOfFile.lastIndexOf("."))) || !!~arrayOfKey.indexOf(nameOfDir)){
-                    function setPathsForEachlanguage(arrayOfPaths){        
-                        let arrayOfNextLevelPaths;
-                        arrayOfPaths.forEach(function(element){
-                            if (element.isFile()){
-                                Object.assign(this.language[nameOfKey], element.ReadKeyValueFile(element.getPath(), "="))
-                            } else if (element.isDirectory()){
-                                arrayOfNextLevelPaths = FileTools.GetListOfDirs(element.getPath())
-                            }
-                        });
-                        if (!arrayOfNextLevelPaths){
-                            setPathsForEachlanguage(arrayOfNextLevelPaths)
+                function setPathsForEachlanguage(arrayOfPaths){        
+                    let arrayOfNextLevelPaths;
+                    arrayOfPaths.forEach(function(element){
+                        if (element.isFile()){
+                            Object.assign(this.language[nameOfKey], element.ReadKeyValueFile(element.getPath(), "="))
+                        } else if (element.isDirectory()){
+                            arrayOfNextLevelPaths = FileTools.GetListOfDirs(element.getPath())
                         }
-                    }(pathsToFilesAndDirs);
-                //} else if (!indexOfKey){
-                //    break;
-                //}
+                    });
+                    if (!arrayOfNextLevelPaths){
+                        setPathsForEachlanguage(arrayOfNextLevelPaths)
+                    }
+                }(pathsToFilesAndDirs);
             }
         }
     }(this.pathToTranslateDir),
