@@ -5,7 +5,7 @@ LIBRARY({
     api: "CoreEngine"
 })
 
-let JETranslation = {
+let SimpleTranslation = {
     language: {
         "en_us": {},
         "bg_bg": {},
@@ -48,7 +48,7 @@ let JETranslation = {
                 break;
             };
         };
-        this.pathToTranslateDir = pathToDir
+        SimpleTranslation.pathToTranslateDir = pathToDir
     }(),
 
     getPathsForEachlanguage: function(path){
@@ -74,11 +74,11 @@ let JETranslation = {
                 }(pathsToFilesAndDirs);
             }
         }
-    }(this.pathToTranslateDir),
+    }(SimpleTranslation.pathToTranslateDir),
 
     translate: function(key){
         function getLanguageKey(languageKey){
-            return this.language[languageKey][key]
+            return SimpleTranslation.language[languageKey][key]
         };
         Translation.translate(key);
         Translation.addTranslation(key, {
