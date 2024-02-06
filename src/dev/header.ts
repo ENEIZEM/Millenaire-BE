@@ -1,3 +1,5 @@
+IMPORT("SimpleTranslationLib")
+
 const MAX_REPUTATION: number = 32768;
 const MIN_REPUTATION: number = -1024;
 const RELETATION: {

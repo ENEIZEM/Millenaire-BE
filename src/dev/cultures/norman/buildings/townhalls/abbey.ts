@@ -4,7 +4,7 @@ Millenaire.norman.buildings.abbey = {
   livingVillagersId: ["abbot"],
   workersVillagersId: ["abbot"],
   type: "towhalls",
-  name: Translation.translate("abbey"),
+  name: /*Simple*/Translation.translate("abbey"),
   nativeName: "Abbaye",
   length: 32,
   width: 32,

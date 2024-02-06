@@ -1,5 +1,5 @@
 LIBRARY({
-    name: "JETranslateAPI",
+    name: "SimpleTranslationLib",
     version: 1,
     shared: false,
     api: "CoreEngine"
@@ -134,3 +134,5 @@ let SimpleTranslation = {
         Translation.addTranslation(key, translationObject)
     }
 };
+
+EXPORT("SimpleTranslationLib", SimpleTranslation)
