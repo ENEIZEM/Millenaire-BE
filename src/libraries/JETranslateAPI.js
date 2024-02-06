@@ -17,19 +17,19 @@ let SimpleTranslation = {
         "es_es": {},
         "es_mx": {},
         "fi_fi": {},
-        "fr_ac": {},
         "fr_fr": {},
+        "fr_ac": {},
         "hu_hu": {},
         "id_id": {},
         "it_it": {},
         "ja_jp": {},
         "ko_kr": {},
-        "nb_no": {},
         "no_no": {},
+        "nb_no": {},
         "nl_nl": {},
         "pl_pl": {},
-        "pt_br": {},
         "pt_pt": {},
+        "pt_br": {},
         "ru_ru": {},
         "sk_sk": {},
         "tr_tr": {},
@@ -52,6 +52,8 @@ let SimpleTranslation = {
     }(),
 
     getPathsForEachlanguage: function(path){
+        //создаём перемнную для массива, хранящего названия ключей объекта SimpleTranslation.language
+        let arrayOfKey = Object.keys(SimpleTranslation.language);
         //создаём перемнную для массива путей к файлам, находящимся в папке path
         let pathsToFiles = FileTools.GetListOfFiles(path);
         //создаём перемнную для массива путей к директориям, находящимся в папке path
@@ -65,13 +67,13 @@ let SimpleTranslation = {
             //создаём цикл с индексом indexOfKey. При каждой итерации цикла будут перебираться все языковые объекты ключей объекта SimpleTranslation.language
             for(let indexOfKey = 0; indexOfKey < 30; indexOfKey++){
                 //создаём перемнную, хранящую название текущего языкового ключа объекта SimpleTranslation.language
-                let nameOfKey = Object.keys(SimpleTranslation.language)[indexOfKey];  
+                let nameOfKey = arrayOfKey[indexOfKey];  
                 //создаём перемнную для массива возможных названий файла или директории из массива путей к файлам и директориям, находящимся в папке path, на основе названия текущего языкового ключа объекта SimpleTranslation.language
-                let arrayOfKey = [nameOfKey, nameOfKey.slice(0, 2), nameOfKey.slice(0, 3) + nameOfKey.slice(3, 5).toUpperCase()];
+                let arrayOfExamples = [nameOfKey, nameOfKey.slice(0, 2), nameOfKey.slice(0, 3) + nameOfKey.slice(3, 5).toUpperCase()];
                 //проверка того, что название текущего файла или директории из массива путей к файлам и директориям, находящимся в папке path, соответствует одному из возможных названий файла или директории
-                if(!!~arrayOfKey.indexOf(fileOrDirName.slice(0, fileOrDirName.lastIndexOf(".") != -1 ? fileOrDirName.lastIndexOf(".") : fileOrDirName.length))){
+                if(!!~arrayOfExamples.indexOf(fileOrDirName.slice(0, fileOrDirName.lastIndexOf(".") != -1 ? fileOrDirName.lastIndexOf(".") : fileOrDirName.length))){
                     function setPathsForEachlanguage(arrayOfPaths){        
-                        let arrayOfNextLevelPaths;
+                        let arrayOfNextLevelPaths = [];
                         arrayOfPaths.forEach(function(element){
                             if (element.isFile()){
                                 Object.assign(SimpleTranslation.language[nameOfKey], element.ReadKeyValueFile(element.getPath(), "="))
@@ -81,9 +83,11 @@ let SimpleTranslation = {
                         });
                         if (!arrayOfNextLevelPaths){
                             setPathsForEachlanguage(arrayOfNextLevelPaths)
-                        }
-                    }(pathsToFilesAndDirs);
-                }
+                        }; 
+                    }(pathsToFilesAndDirs[indexOfPath].getPath());
+                    arrayOfKey.splice(indexOfKey, 1);
+                    break;
+                };       
             }
         }
     }(SimpleTranslation.pathToTranslateDir),
