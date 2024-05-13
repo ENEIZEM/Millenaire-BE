@@ -5,7 +5,6 @@ LIBRARY({
     api: "CoreEngine"
 })
 
-//проверка
 let SimpleTranslation = {
     language: {
         "en_us": {},
