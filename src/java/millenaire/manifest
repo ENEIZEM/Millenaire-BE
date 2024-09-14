@@ -1,4 +1,4 @@
 {
     "source-dirs":["src"], "library-dirs":["lib"], "verbose":true, "options":[],
-    "boot-classes":["com.sample_mod.sample_package.Boot", "com.maksimpomazuev.millenaire.Millenaire"]
+    "boot-classes":["com.pomazuevmaksim.millenaire.Millenaire"]
 }
